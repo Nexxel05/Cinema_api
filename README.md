@@ -23,14 +23,23 @@ cd Cinema_api
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver 
+```
+
+You can create environmental variables either 
+directly in terminal, like below
+
+```
 set POSTGRES_HOST=<your db hostname>
 set POSTGRES_DB=<your db name> 
 set POSTGRES_USER=<your db user> 
 set POSTGRES_PASSWORD=<your db password> 
 set SECRET_KEY=<your db secret key>
-python manage.py migrate
-python manage.py runserver 
 ```
+
+or create .env in project root directory and store 
+values there like shown in .env_sample.
 
 ## Run with Docker
 
